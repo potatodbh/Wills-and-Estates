@@ -1,912 +1,405 @@
-/* style.css */
-:root{
-  --bg: #F8FAFC;
-  --text: #1E293B;
-  --muted: rgba(30, 41, 59, 0.72);
-  --muted2: rgba(30, 41, 59, 0.55);
+<!-- index.html -->
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Self-Help Legal Clinic — Ontario Wills (Student Guide)</title>
 
-  --primary: #1E293B; /* deep navy */
-  --accent: #3B82F6;  /* legal blue */
-  --card: #FFFFFF;
-  --border: rgba(30, 41, 59, 0.10);
-  --shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  --radius-lg: 18px;
-  --radius-md: 14px;
-  --radius-sm: 12px;
+  <link rel="stylesheet" href="style.css" />
+</head>
 
-  --max: 1140px;
-}
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#home">Skip to content</a>
 
-* { box-sizing: border-box; }
-html, body { height: 100%; }
-html { scroll-behavior: smooth; }
-body{
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  <!-- Header / Nav -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="brand" href="#home" aria-label="Self-Help Legal Clinic Home">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span class="brand-text">
+          <span class="brand-title">Self-Help Legal Clinic</span>
+          <span class="brand-subtitle">Ontario Wills • Student Guide</span>
+        </span>
+      </a>
 
-img{ max-width: 100%; display: block; }
-a{ color: inherit; text-decoration: none; }
-button, input{ font: inherit; }
+      <nav class="nav" aria-label="Primary">
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
 
-.container{
-  width: 100%;
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 20px;
-}
+        <ul class="nav-list" id="navList">
+          <li><a class="nav-link active" href="#home">Home</a></li>
+          <li><a class="nav-link" href="#process">Process</a></li>
+          <li><a class="nav-link" href="#will-generator">Will-Generator</a></li>
+          <li><a class="nav-link" href="#glossary">Glossary</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
 
-.section{
-  padding: 76px 0;
-}
+  <!-- Main -->
+  <main>
+    <!-- Hero -->
+    <section id="home" class="section hero">
+      <div class="hero-bg" role="img" aria-label="Professional office background"></div>
 
-.section.alt{
-  background: linear-gradient(180deg, rgba(59,130,246,0.06), rgba(59,130,246,0.00));
-}
+      <div class="container hero-inner reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Ontario Succession Law Reform Act-aligned guidance</p>
+          <h1>Secure Your Future: A Student's Guide to Ontario Wills</h1>
+          <p class="lead">
+            A structured walkthrough of drafting, signing, and safely storing a Will in Ontario—plus a simple
+            simulation to help you identify your next best step.
+          </p>
 
-.section-head{
-  margin-bottom: 22px;
-}
-.section-head h2{
-  margin: 0 0 6px 0;
-  font-size: clamp(24px, 2.4vw, 32px);
-  letter-spacing: -0.02em;
-}
-.muted{ color: var(--muted); }
-.lead{ color: var(--muted); font-size: 1.05rem; }
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#will-generator">Start Now</a>
+            <a class="btn btn-ghost" href="#process">View Process</a>
+          </div>
 
-.grid{
-  display: grid;
-}
-.two-col{
-  grid-template-columns: 1.1fr 0.9fr;
-}
-.gap-lg{ gap: 18px; }
+          <div class="disclaimer-card" role="note" aria-label="Legal disclaimer">
+            <div class="disclaimer-icon" aria-hidden="true">i</div>
+            <div>
+              <strong>Educational only — not legal advice.</strong>
+              This site summarizes common Ontario Will rules. For complex situations (blended families, significant assets,
+              capacity concerns), consult a licensed Ontario lawyer.
+            </div>
+          </div>
+        </div>
 
-@media (max-width: 980px){
-  .two-col{ grid-template-columns: 1fr; }
-}
+        <div class="hero-panel">
+          <div class="hero-panel-card">
+            <div class="panel-kicker">At a glance</div>
+            <ul class="checklist">
+              <li>Most Wills require <strong>2 witnesses</strong> present at the same time</li>
+              <li>A <strong>holograph (handwritten)</strong> Will can be valid without witnesses</li>
+              <li>Avoid using <strong>beneficiaries</strong> (or their spouses) as witnesses</li>
+              <li>Keep the <strong>original</strong> Will safe and tell your executor where it is</li>
+            </ul>
+          </div>
 
-/* Skip link */
-.skip-link{
-  position: absolute;
-  left: -999px;
-  top: 12px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  padding: 10px 12px;
-  border-radius: 10px;
-  box-shadow: var(--shadow);
-  z-index: 9999;
-}
-.skip-link:focus{ left: 12px; }
+          <div class="hero-image-card">
+            <img
+              src="https://images.unsplash.com/photo-1521791055366-0d553872125f?auto=format&fit=crop&w=1200&q=80"
+              alt="Professional workspace with documents"
+              loading="lazy"
+            />
+            <div class="hero-image-caption">
+              Modern, practical guidance—built for clarity.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Header */
-.site-header{
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(248,250,252,0.78);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border);
-}
-.header-inner{
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 0;
-  gap: 14px;
-}
+    <!-- Process -->
+    <section id="process" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Process</h2>
+          <p class="muted">
+            A clean 3-phase roadmap designed around Ontario’s core Will requirements: draft clearly, execute properly,
+            then store the original securely.
+          </p>
+        </div>
 
-.brand{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  min-width: 220px;
-}
-.brand-mark{
-  width: 36px;
-  height: 36px;
-  border-radius: 12px;
-  background: radial-gradient(circle at 30% 30%, rgba(59,130,246,0.9), rgba(59,130,246,0.15));
-  border: 1px solid rgba(59,130,246,0.35);
-  box-shadow: 0 10px 24px rgba(59,130,246,0.15);
-}
-.brand-title{
-  display: block;
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-}
-.brand-subtitle{
-  display: block;
-  font-size: 0.85rem;
-  color: var(--muted2);
-  margin-top: 1px;
-}
+        <div class="grid two-col gap-lg">
+          <!-- Stepper -->
+          <div class="card reveal">
+            <div class="card-head">
+              <h3 class="card-title">The Walkthrough</h3>
+              <p class="card-subtitle">Interactive Stepper: Drafting → Execution (Signing) → Storage</p>
+            </div>
 
-/* Nav */
-.nav{
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-.nav-list{
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 10px;
-  align-items: center;
-}
-.nav-link{
-  display: inline-flex;
-  align-items: center;
-  padding: 10px 12px;
-  border-radius: 12px;
-  color: var(--muted);
-  font-weight: 600;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
-}
-.nav-link:hover{
-  background: rgba(59,130,246,0.08);
-  color: var(--text);
-}
-.nav-link.active{
-  background: rgba(59,130,246,0.12);
-  color: var(--text);
-  border: 1px solid rgba(59,130,246,0.25);
-}
+            <div class="stepper" aria-label="Will process stepper">
+              <div class="stepper-steps" role="tablist" aria-label="Process steps">
+                <button class="step is-active" type="button" role="tab" aria-selected="true" data-step="0">
+                  <span class="step-index">1</span>
+                  <span class="step-label">Drafting</span>
+                </button>
+                <button class="step" type="button" role="tab" aria-selected="false" data-step="1">
+                  <span class="step-index">2</span>
+                  <span class="step-label">Execution (Signing)</span>
+                </button>
+                <button class="step" type="button" role="tab" aria-selected="false" data-step="2">
+                  <span class="step-index">3</span>
+                  <span class="step-label">Storage</span>
+                </button>
+              </div>
 
-.nav-toggle{
-  display: none;
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  border: 1px solid var(--border);
-  background: var(--card);
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  box-shadow: 0 10px 24px rgba(15,23,42,0.06);
-}
-.nav-toggle span{
-  display: block;
-  width: 18px;
-  height: 2px;
-  background: var(--primary);
-  border-radius: 2px;
-  opacity: 0.9;
-}
-@media (max-width: 860px){
-  .nav-toggle{ display: inline-flex; }
-  .nav-list{
-    position: absolute;
-    right: 20px;
-    top: 68px;
-    flex-direction: column;
-    align-items: stretch;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 10px;
-    min-width: 220px;
-    box-shadow: var(--shadow);
-    transform: translateY(-8px);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 160ms ease, transform 160ms ease;
-  }
-  .nav-list.open{
-    opacity: 1;
-    transform: translateY(0);
-    pointer-events: auto;
-  }
-}
+              <div class="stepper-panel" role="tabpanel" aria-live="polite">
+                <div class="stepper-title" id="stepperTitle">Drafting</div>
+                <p class="stepper-body" id="stepperBody">
+                  Start with clarity: name an executor (estate trustee), list beneficiaries, and describe gifts.
+                  For minor children, name a guardian. Keep language specific and consistent.
+                </p>
 
-/* Hero */
-.hero{
-  padding: 58px 0 76px 0;
-  position: relative;
-  overflow: hidden;
-}
-.hero-bg{
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, rgba(248,250,252,0.88), rgba(248,250,252,0.95)),
-    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2400&q=80");
-  background-size: cover;
-  background-position: center;
-  filter: saturate(1.05);
-}
-.hero-inner{
-  position: relative;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  gap: 20px;
-  align-items: start;
-}
-@media (max-width: 980px){
-  .hero-inner{ grid-template-columns: 1fr; }
-}
-.eyebrow{
-  margin: 0 0 8px 0;
-  color: rgba(59,130,246,0.95);
-  font-weight: 700;
-  font-size: 0.92rem;
-  letter-spacing: 0.02em;
-}
-.hero h1{
-  margin: 0 0 10px 0;
-  font-size: clamp(30px, 3.5vw, 46px);
-  line-height: 1.06;
-  letter-spacing: -0.03em;
-}
-.hero-actions{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  margin-top: 14px;
-}
+                <div class="stepper-bullets" id="stepperBullets" aria-label="Drafting checklist"></div>
 
-.hero-panel{
-  display: grid;
-  gap: 14px;
-}
-.hero-panel-card{
-  background: rgba(255,255,255,0.78);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-.panel-kicker{
-  font-weight: 700;
-  margin-bottom: 10px;
-  letter-spacing: -0.02em;
-}
-.checklist{
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-}
-.checklist li{ margin: 8px 0; }
+                <div class="stepper-footer">
+                  <button class="btn btn-soft" id="stepPrev" type="button" aria-label="Previous step">Back</button>
+                  <button class="btn btn-primary" id="stepNext" type="button" aria-label="Next step">Next</button>
+                </div>
+              </div>
+            </div>
+          </div>
 
-.hero-image-card{
-  background: rgba(255,255,255,0.85);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  box-shadow: var(--shadow);
-}
-.hero-image-card img{
-  height: 220px;
-  width: 100%;
-  object-fit: cover;
-}
-.hero-image-caption{
-  padding: 14px 16px;
-  color: var(--muted);
-  font-weight: 600;
-}
+          <!-- Supporting card -->
+          <div class="card reveal">
+            <div class="card-head">
+              <h3 class="card-title">Ontario rule highlights</h3>
+              <p class="card-subtitle">Key “gotchas” students often miss</p>
+            </div>
 
-/* Disclaimer */
-.disclaimer-card{
-  margin-top: 16px;
-  display: grid;
-  grid-template-columns: 32px 1fr;
-  gap: 12px;
-  align-items: start;
-  padding: 14px 14px;
-  background: rgba(255,255,255,0.82);
-  border: 1px solid rgba(59,130,246,0.22);
-  border-radius: 16px;
-  box-shadow: 0 16px 34px rgba(15,23,42,0.06);
-}
-.disclaimer-icon{
-  width: 32px;
-  height: 32px;
-  border-radius: 12px;
-  display: grid;
-  place-items: center;
-  font-weight: 800;
-  color: #0b1b3d;
-  background: rgba(59,130,246,0.16);
-  border: 1px solid rgba(59,130,246,0.22);
-}
+            <div class="info-list">
+              <div class="info-item">
+                <div class="info-badge">Witnessing</div>
+                <div class="info-text">
+                  Most Wills must be signed by the testator in front of <strong>two witnesses present at the same time</strong>,
+                  and the witnesses must sign in the testator’s presence.
+                </div>
+              </div>
 
-/* Cards */
-.card{
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-lg);
-  padding: 18px;
-  box-shadow: var(--shadow);
-}
-.card-head{
-  margin-bottom: 14px;
-}
-.card-head.row{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-}
-.card-title{
-  margin: 0 0 4px 0;
-  font-size: 1.18rem;
-  letter-spacing: -0.02em;
-}
-.card-subtitle{
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.95rem;
-}
+              <div class="info-item">
+                <div class="info-badge">Beneficiary-witness</div>
+                <div class="info-text">
+                  If a beneficiary (or a beneficiary’s spouse) witnesses your Will, their gift may be
+                  <strong>void</strong>. Pick independent witnesses whenever possible.
+                </div>
+              </div>
 
-/* Buttons */
-.btn{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 11px 14px;
-  border-radius: 14px;
-  border: 1px solid transparent;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  cursor: pointer;
-  transition: transform 160ms ease, background 160ms ease, border 160ms ease, opacity 160ms ease;
-  user-select: none;
-}
-.btn:active{ transform: translateY(1px); }
+              <div class="info-item">
+                <div class="info-badge">Holograph Will</div>
+                <div class="info-text">
+                  A <strong>holograph</strong> Will can be valid in Ontario if it is
+                  <strong>wholly handwritten</strong> by the testator and signed—no witnesses required.
+                </div>
+              </div>
 
-.btn-primary{
-  color: #fff;
-  background: var(--accent);
-  border-color: rgba(59,130,246,0.35);
-  box-shadow: 0 18px 28px rgba(59,130,246,0.22);
-}
-.btn-primary:hover{ background: rgba(59,130,246,0.92); }
+              <div class="info-item">
+                <div class="info-badge">Remote signing</div>
+                <div class="info-text">
+                  Ontario law permits <strong>remote witnessing via audio-visual technology</strong> in certain cases
+                  (typically requiring one witness to be an Ontario lawyer or paralegal).
+                </div>
+              </div>
 
-.btn-ghost{
-  background: rgba(255,255,255,0.85);
-  border-color: rgba(30,41,59,0.14);
-}
-.btn-ghost:hover{ background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.26); }
+              <div class="info-item">
+                <div class="info-badge">Life updates</div>
+                <div class="info-text">
+                  Marriage no longer automatically revokes a Will for marriages on/after <strong>Jan 1, 2022</strong>.
+                  Separation and divorce can still change how spousal gifts/appointments are treated—review your Will
+                  after major life events.
+                </div>
+              </div>
+            </div>
 
-.btn-soft{
-  background: rgba(30,41,59,0.04);
-  border-color: rgba(30,41,59,0.10);
-  color: var(--text);
-}
-.btn-soft:hover{ background: rgba(59,130,246,0.08); border-color: rgba(59,130,246,0.22); }
+            <div class="image-slab">
+              <img
+                src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80"
+                alt="Legal documents and pen"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-.btn:disabled{
-  opacity: 0.5;
-  cursor: not-allowed;
-  transform: none;
-}
+    <!-- Will Generator -->
+    <section id="will-generator" class="section alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Will-I-Nator</h2>
+          <p class="muted">
+            One question at a time. At the end, get a tailored summary aligned with Ontario’s Will formalities
+            (SLRA) and common student scenarios.
+          </p>
+        </div>
 
-/* Pills / links */
-.pill{
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 7px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(59,130,246,0.22);
-  background: rgba(59,130,246,0.10);
-  color: rgba(30,41,59,0.92);
-  font-weight: 700;
-  font-size: 0.88rem;
-}
-.link{
-  border: none;
-  background: none;
-  padding: 0;
-  color: rgba(59,130,246,1);
-  font-weight: 700;
-  cursor: pointer;
-}
-.link:hover{ text-decoration: underline; }
+        <div class="grid two-col gap-lg">
+          <!-- Simulator Card -->
+          <div class="card reveal">
+            <div class="card-head row">
+              <div>
+                <h3 class="card-title">Will Simulation</h3>
+                <p class="card-subtitle">Fast guidance • Clear next steps • No data leaves your browser</p>
+              </div>
+              <div class="pill" id="simStatus" aria-live="polite">Ready</div>
+            </div>
 
-/* Stepper */
-.stepper{
-  display: grid;
-  gap: 14px;
-}
-.stepper-steps{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-}
-.step{
-  border: 1px solid rgba(30,41,59,0.12);
-  background: rgba(30,41,59,0.03);
-  border-radius: 16px;
-  padding: 12px;
-  text-align: left;
-  cursor: pointer;
-  transition: background 160ms ease, border 160ms ease, transform 160ms ease;
-}
-.step:hover{
-  background: rgba(59,130,246,0.08);
-  border-color: rgba(59,130,246,0.24);
-}
-.step.is-active{
-  background: rgba(59,130,246,0.12);
-  border-color: rgba(59,130,246,0.30);
-}
-.step-index{
-  display: inline-grid;
-  place-items: center;
-  width: 26px;
-  height: 26px;
-  border-radius: 10px;
-  background: rgba(59,130,246,0.18);
-  border: 1px solid rgba(59,130,246,0.22);
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-.step-label{
-  display: block;
-  font-weight: 800;
-  letter-spacing: -0.02em;
-}
-.stepper-panel{
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-  border-radius: 16px;
-  padding: 14px;
-}
-.stepper-title{
-  font-weight: 900;
-  font-size: 1.05rem;
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-}
-.stepper-body{
-  margin: 0 0 10px 0;
-  color: var(--muted);
-}
-.stepper-bullets{
-  display: grid;
-  gap: 8px;
-  margin: 10px 0 14px;
-}
-.bullet{
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 10px;
-  align-items: start;
-  padding: 10px 10px;
-  background: rgba(255,255,255,0.8);
-  border: 1px solid rgba(30,41,59,0.10);
-  border-radius: 14px;
-  color: var(--muted);
-}
-.bullet .dot{
-  width: 10px;
-  height: 10px;
-  border-radius: 99px;
-  background: rgba(59,130,246,0.75);
-  margin-top: 5px;
-}
-.stepper-footer{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+            <div class="progress-wrap" aria-label="Progress">
+              <div class="progress-bar" aria-hidden="true">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+              <div class="progress-meta">
+                <span class="muted" id="progressText">0%</span>
+                <button class="link" id="resetSim" type="button">Reset</button>
+              </div>
+            </div>
 
-/* Info list */
-.info-list{
-  display: grid;
-  gap: 10px;
-}
-.info-item{
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 12px;
-  padding: 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-}
-.info-badge{
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  height: 34px;
-  border-radius: 999px;
-  background: rgba(59,130,246,0.12);
-  border: 1px solid rgba(59,130,246,0.22);
-  font-weight: 900;
-  font-size: 0.85rem;
-}
-.info-text{
-  color: var(--muted);
-}
+            <div class="sim-stage">
+              <div class="sim-card fade" id="simCard" aria-live="polite"></div>
 
-/* Image slab */
-.image-slab{
-  margin-top: 14px;
-  overflow: hidden;
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-}
-.image-slab img{
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
+              <div class="sim-actions">
+                <button class="btn btn-soft" id="simBack" type="button" disabled>Back</button>
+                <button class="btn btn-primary" id="simNext" type="button" disabled>Next</button>
+              </div>
+            </div>
+          </div>
 
-/* Simulator */
-.progress-wrap{
-  display: grid;
-  gap: 8px;
-  margin-bottom: 12px;
-}
-.progress-bar{
-  height: 10px;
-  border-radius: 999px;
-  background: rgba(30,41,59,0.08);
-  border: 1px solid rgba(30,41,59,0.10);
-  overflow: hidden;
-}
-.progress-fill{
-  height: 100%;
-  width: 0%;
-  background: rgba(59,130,246,0.88);
-  transition: width 280ms ease;
-}
-.progress-meta{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
+          <!-- Summary / Help -->
+          <div class="card reveal">
+            <div class="card-head">
+              <h3 class="card-title">Where to Get Help</h3>
+              <p class="card-subtitle">Real Ontario links for trusted, human support</p>
+            </div>
 
-.sim-stage{
-  display: grid;
-  gap: 12px;
-}
-.sim-card{
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-  padding: 14px;
-  min-height: 220px;
-}
-.sim-actions{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.q-title{
-  margin: 0 0 8px 0;
-  font-size: 1.12rem;
-  letter-spacing: -0.02em;
-}
-.q-sub{
-  margin: 0 0 12px 0;
-  color: var(--muted);
-}
-.option-grid{
-  display: grid;
-  gap: 10px;
-}
-.option{
-  display: grid;
-  grid-template-columns: 18px 1fr;
-  gap: 10px;
-  align-items: start;
-  padding: 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(255,255,255,0.85);
-  cursor: pointer;
-  transition: transform 160ms ease, border 160ms ease, background 160ms ease;
-}
-.option:hover{
-  transform: translateY(-1px);
-  border-color: rgba(59,130,246,0.28);
-  background: rgba(59,130,246,0.06);
-}
-.option.is-selected{
-  border-color: rgba(59,130,246,0.40);
-  background: rgba(59,130,246,0.10);
-}
-.option .radio{
-  width: 14px;
-  height: 14px;
-  border-radius: 999px;
-  border: 2px solid rgba(30,41,59,0.35);
-  margin-top: 4px;
-}
-.option.is-selected .radio{
-  border-color: rgba(59,130,246,0.85);
-  box-shadow: inset 0 0 0 3px rgba(59,130,246,0.35);
-}
-.option .label{
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-.option .hint{
-  color: var(--muted);
-  font-size: 0.95rem;
-  margin-top: 2px;
-}
-.note{
-  margin-top: 12px;
-  padding: 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(59,130,246,0.20);
-  background: rgba(59,130,246,0.08);
-  color: rgba(30,41,59,0.90);
-}
+            <div class="help-grid">
+              <a class="help-card" href="https://lso.ca/home" target="_blank" rel="noopener noreferrer">
+                <div class="help-icon" aria-hidden="true">⚖️</div>
+                <div>
+                  <div class="help-title">Law Society of Ontario</div>
+                  <div class="help-text">Find licensed lawyers/paralegals, confirm credentials, and access public resources.</div>
+                </div>
+              </a>
 
-/* Help cards */
-.help-grid{
-  display: grid;
-  gap: 10px;
-}
-.help-card{
-  display: grid;
-  grid-template-columns: 44px 1fr;
-  gap: 12px;
-  align-items: start;
-  padding: 12px;
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-  transition: transform 160ms ease, border 160ms ease, background 160ms ease;
-}
-.help-card:hover{
-  transform: translateY(-1px);
-  border-color: rgba(59,130,246,0.25);
-  background: rgba(59,130,246,0.06);
-}
-.help-icon{
-  width: 44px;
-  height: 44px;
-  border-radius: 16px;
-  background: rgba(59,130,246,0.12);
-  border: 1px solid rgba(59,130,246,0.20);
-  display: grid;
-  place-items: center;
-  font-size: 18px;
-}
-.help-title{ font-weight: 900; letter-spacing: -0.02em; }
-.help-text{ color: var(--muted); font-size: 0.95rem; margin-top: 3px; }
+              <a class="help-card" href="https://www.probonoontario.org/" target="_blank" rel="noopener noreferrer">
+                <div class="help-icon" aria-hidden="true">🤝</div>
+                <div>
+                  <div class="help-title">Pro Bono Ontario</div>
+                  <div class="help-text">Free legal help resources and advice hotlines for eligible Ontarians.</div>
+                </div>
+              </a>
+            </div>
 
-.callout{
-  margin-top: 12px;
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(255,255,255,0.70);
-}
-.callout-title{
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin-bottom: 8px;
-}
-.bullets{
-  margin: 0;
-  padding-left: 18px;
-  color: var(--muted);
-}
-.bullets li{ margin: 6px 0; }
+            <div class="callout">
+              <div class="callout-title">When you should definitely get legal advice</div>
+              <ul class="bullets">
+                <li>Complex family situations (step-children, multiple partners, dependants)</li>
+                <li>Business ownership, significant real estate, or cross-border assets</li>
+                <li>Capacity concerns, undue influence risk, or family conflict</li>
+                <li>Trust planning (minor beneficiaries, disability planning)</li>
+              </ul>
+            </div>
 
-.mini-faq{
-  margin-top: 12px;
-  padding: 14px;
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-}
-.mini-faq-title{
-  font-weight: 900;
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
+            <div class="mini-faq">
+              <div class="mini-faq-title">Quick note</div>
+              <p class="muted">
+                This site focuses on Ontario Will formalities under the <strong>Succession Law Reform Act</strong>.
+                If you also need to plan for decisions while alive, consider a separate
+                <strong>Power of Attorney</strong> for property and personal care.
+              </p>
+            </div>
 
-/* Results */
-.results{
-  margin-top: 18px;
-}
-.results-grid{
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 12px;
-}
-@media (max-width: 980px){
-  .results-grid{ grid-template-columns: 1fr; }
-}
-.results-block{
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-  padding: 14px;
-}
-.results-title{
-  font-weight: 900;
-  margin-bottom: 6px;
-  letter-spacing: -0.02em;
-}
-.results-body{
-  color: var(--muted);
-}
-.results-body ul{
-  margin: 8px 0 0 0;
-  padding-left: 18px;
-}
-.results-body li{ margin: 6px 0; }
-.results-footer{
-  margin-top: 12px;
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-wrap: wrap;
-}
+            <div class="image-slab">
+              <img
+                src="https://images.unsplash.com/photo-1528740561666-dc2479dc08ab?auto=format&fit=crop&w=1200&q=80"
+                alt="People in a professional consultation"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
 
-/* Glossary */
-.glossary-toolbar{
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  align-items: center;
-  flex-wrap: wrap;
-  margin: 14px 0 14px;
-}
-.search{
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: min(560px, 100%);
-  background: rgba(255,255,255,0.85);
-  border: 1px solid rgba(30,41,59,0.12);
-  border-radius: 999px;
-  padding: 10px 12px;
-  box-shadow: 0 12px 26px rgba(15,23,42,0.06);
-}
-.search-icon{
-  color: rgba(30,41,59,0.55);
-  margin-right: 10px;
-  font-weight: 900;
-}
-.search input{
-  width: 100%;
-  border: none;
-  outline: none;
-  background: transparent;
-  color: var(--text);
-  font-weight: 600;
-}
-.search input::placeholder{ color: rgba(30,41,59,0.45); }
+        <!-- Results drawer -->
+        <div class="results card reveal" id="results" hidden>
+          <div class="card-head">
+            <h3 class="card-title">Your Summary</h3>
+            <p class="card-subtitle">A practical checklist you can follow (and bring to a lawyer if needed)</p>
+          </div>
 
-.glossary-grid{
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-@media (max-width: 980px){
-  .glossary-grid{ grid-template-columns: repeat(2, 1fr); }
-}
-@media (max-width: 620px){
-  .glossary-grid{ grid-template-columns: 1fr; }
-}
-.term{
-  border-radius: 16px;
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(255,255,255,0.85);
-  padding: 14px;
-  transition: transform 160ms ease, border 160ms ease, background 160ms ease;
-}
-.term:hover{
-  transform: translateY(-1px);
-  border-color: rgba(59,130,246,0.22);
-  background: rgba(59,130,246,0.04);
-}
-.term-title{
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin: 0 0 6px 0;
-}
-.term-body{
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.96rem;
-}
-.term-tag{
-  display: inline-flex;
-  margin-top: 10px;
-  padding: 6px 10px;
-  border-radius: 999px;
-  border: 1px solid rgba(30,41,59,0.12);
-  background: rgba(30,41,59,0.03);
-  color: rgba(30,41,59,0.72);
-  font-weight: 800;
-  font-size: 0.82rem;
-}
+          <div class="results-grid">
+            <div class="results-block">
+              <div class="results-title">Recommended path</div>
+              <div class="results-body" id="resultsPath"></div>
+            </div>
 
-/* Footer note */
-.footer-note{
-  margin-top: 16px;
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(30,41,59,0.10);
-  background: rgba(30,41,59,0.02);
-  padding: 14px;
-}
-.footer-note-title{
-  font-weight: 900;
-  letter-spacing: -0.02em;
-  margin-bottom: 6px;
-}
+            <div class="results-block">
+              <div class="results-title">Execution checklist</div>
+              <div class="results-body" id="resultsChecklist"></div>
+            </div>
 
-/* Footer */
-.site-footer{
-  border-top: 1px solid var(--border);
-  padding: 22px 0;
-  background: rgba(255,255,255,0.55);
-}
-.footer-inner{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.footer-brand{
-  font-weight: 900;
-  letter-spacing: -0.02em;
-}
-.footer-links{
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-.footer-links a{
-  color: var(--muted);
-  font-weight: 700;
-}
-.footer-links a:hover{ color: var(--text); text-decoration: underline; }
+            <div class="results-block">
+              <div class="results-title">Risk flags</div>
+              <div class="results-body" id="resultsRisks"></div>
+            </div>
 
-/* Fade / reveal transitions */
-.fade{
-  opacity: 0;
-  transform: translateY(6px);
-  transition: opacity 220ms ease, transform 220ms ease;
-}
-.fade.is-in{
-  opacity: 1;
-  transform: translateY(0);
-}
+            <div class="results-block">
+              <div class="results-title">Storage plan</div>
+              <div class="results-body" id="resultsStorage"></div>
+            </div>
+          </div>
 
-.reveal{
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 420ms ease, transform 420ms ease;
-}
-.reveal.is-visible{
-  opacity: 1;
-  transform: translateY(0);
-}
+          <div class="results-footer">
+            <button class="btn btn-soft" id="copySummary" type="button">Copy Summary</button>
+            <a class="btn btn-primary" href="#glossary">Use Glossary</a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-/* Reduced motion */
-@media (prefers-reduced-motion: reduce){
-  html { scroll-behavior: auto; }
-  .btn, .nav-link, .step, .option, .help-card, .term,
-  .fade, .reveal, .progress-fill{
-    transition: none !important;
-  }
-}
+    <!-- Glossary -->
+    <section id="glossary" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <h2>Glossary</h2>
+          <p class="muted">
+            Search and filter key Ontario Will terms (10–15 essentials). Keep it simple, legal, and readable.
+          </p>
+        </div>
+
+        <div class="glossary-toolbar reveal">
+          <div class="search">
+            <span class="search-icon" aria-hidden="true">⌕</span>
+            <input id="glossarySearch" type="search" placeholder="Search terms (e.g., executor, probate, holograph)…" aria-label="Search glossary" />
+          </div>
+          <div class="glossary-meta">
+            <span class="pill" id="glossaryCount">15 terms</span>
+          </div>
+        </div>
+
+        <div class="glossary-grid reveal" id="glossaryGrid" aria-live="polite">
+          <!-- Items injected by JS for clean filtering -->
+        </div>
+
+        <div class="footer-note reveal">
+          <div class="footer-note-inner">
+            <div class="footer-note-title">Student-safe reminder</div>
+            <p class="muted">
+              If you’re unsure about witnesses, capacity, or family situations: use the help links above and ask a licensed
+              professional. A small mistake can create big delays in probate.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-brand">Self-Help Legal Clinic</div>
+        <div class="muted">Ontario Wills • Designed for clarity • Modern corporate UX</div>
+      </div>
+      <div class="footer-links">
+        <a href="#home">Back to top</a>
+        <a href="#will-generator">Will-I-Nator</a>
+        <a href="https://www.probonoontario.org/" target="_blank" rel="noopener noreferrer">Pro Bono Ontario</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
